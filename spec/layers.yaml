@@ -1,0 +1,84 @@
+# 00i Layer Specification
+# Raw notation (Mark, 2026-08-14):
+#
+# l1.md.filesdata.outside.ooi
+# l2.json.keymap.thrue.mesh-inside
+# l3.suggestion._proj.ect_resarch.._dev.eloop.ment.ooi.objective.ID.measurement
+#   .eDax.analyse.concept.motico.me.conceptor.tbb
+#   .meierdynamics.de/@marketengin.eu
+#   [Keywords: Euromonitor; WSN; _research and analyses with Manus.styles.agents.live.hermes]
+#   .cdax[eDax.managed[instrution.Jdax.bigpicture.TLDR.L1tol7:OOi]]
+#
+# "The OOi task picture in moment of a flashlight in the sky like a thunderstrike"
+# — an OOi observation is a snapshot: a flash that captures state at one instant.
+
+layers:
+
+  L1:
+    format: md                    # markdown files
+    scope: outside                # external-facing, public
+    content: filesdata            # file-level data
+    classification: ooi           # OOi tagged
+    description: >
+      The outside face. Markdown documents, file data, what the world sees.
+      CLOUD_OK. The flash hits the surface first.
+
+  L2:
+    format: json                  # structured data
+    scope: mesh-inside            # internal, through the mesh
+    content: keymap               # key-value mappings
+    routing: thrue                # routes through mesh channels
+    description: >
+      The internal wiring. JSON keymaps that flow through the mesh.
+      CLOUD_AUTH. The flash illuminates the structure.
+
+  L3:
+    format: suggestion            # proposals, research, dev loops
+    scope: project_research       # _proj.ect_resarch
+    content: development_loop     # _dev.eloop.ment
+    classification: ooi.objective.ID.measurement
+    description: >
+      The active layer. Project research, development loops, objectives,
+      ID-based measurements. Where analysis meets concept meets action.
+    connections:
+      - eDax:
+          role: analyse
+      - motico.me:
+          role: concept
+      - tbb:
+          role: conceptor
+      - meierdynamics.de/@marketengin.eu:
+          role: market_engineering
+    keywords:
+      - Euromonitor
+      - WSN
+    research:
+      agents: Manus.styles.agents.live.hermes
+      method: _research and analyses
+
+# ── Project Hierarchy (cdax/eDax/Jdax) ──
+
+cdax:
+  description: Container/parent — the full picture
+  children:
+    eDax:
+      status: managed
+      instruction: true
+      structure: L1tol7:OOi       # full hologram
+    Jdax:
+      role: bigpicture
+      format: TLDR
+
+# ── Category ──
+
+category:
+  type: project
+  owner:
+    entity: M.I.LAB
+    person: Mark
+    channel: management
+  manufacture: true
+  metaphor: >
+    "we will give this appy's — these are swimming in the sea,
+    some good fish" — apps/projects are fish in the sea, OOi catches
+    the good ones.

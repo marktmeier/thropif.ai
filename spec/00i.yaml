@@ -1,0 +1,43 @@
+# 00i — Member Object Specification
+# Parsed from: 00i.area[.NETWORKER;.DOKTOR[.dermatologist]].mesh[Asia].function[.clinical-study[eDax];formulation[[eDax]]].OOi.object.structure.file.l1to7[00i.OOi.eDax]
+#
+# This defines the structure of an active.skill.member in the OOi system.
+# A member is an OOi object — same 7-layer hologram as a Product or Brand,
+# but with MEMBER-specific area/mesh/function attributes.
+
+member:
+  class: active.skill.member
+  identity: auth.meierdynamics.de  # MemberID anchor
+
+  # ── Area of Expertise ──
+  # What this member knows. Multiple areas allowed (semicolon = OR).
+  # Sub-specializations nest with dots.
+  area:
+    - NETWORKER
+    - DOKTOR:
+        - dermatologist
+
+  # ── Mesh Region ──
+  # Where this member operates in the network geography.
+  mesh:
+    - Asia
+
+  # ── Function ──
+  # What this member DOES — active roles linked to specific projects.
+  # [project] = single link, [[project]] = deep/primary link.
+  function:
+    - clinical-study:
+        link: eDax           # single bracket — participates
+    - formulation:
+        link: eDax
+        depth: primary       # double bracket [[eDax]] — primary/deep
+
+  # ── OOi Object Structure ──
+  # Every member gets a hologram: 7 layers, 3,199 addressable cells.
+  # The structure file lives at: OOi/object/structure/file/l1to7/
+  # Object identifier: 00i.OOi.eDax
+  object:
+    id: 00i.OOi.eDax
+    structure: l1to7
+    layers: 7
+    leaves: 3199

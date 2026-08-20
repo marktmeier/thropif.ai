@@ -1,0 +1,84 @@
+# OOi Person Matrix — 7 × 7 = 49 core cells
+# The 00i questions applied to a human in the network.
+# Each layer has 7 factors. Total: 49 cells at L2 depth.
+# L3 = 49 × 7 = 343 (each factor validated). L4 = 2,401 (evidence). → 3,199 total.
+#
+# truth.rate = (L4.loyal evidence / L5.respect peer-measure) / L6.listening cost
+# gold seal (L7) = all 7 Teaching factors verified
+
+L1.Giver:
+  question: "What does this person GIVE to the network?"
+  factors:
+    skill:        "Primary expertise they contribute (formulation, medical, production, design, sales)"
+    output:       "Tangible deliverables (formulas, reports, batches, designs, contracts)"
+    availability: "How reachable and responsive (always-on vs. project-based)"
+    initiative:   "Do they offer before being asked, or only when called"
+    quality:      "Grade of what they deliver (precision, completeness, reliability)"
+    volume:       "How much they contribute (high-volume like Anaïs vs. occasional)"
+    uniqueness:   "What they give that nobody else in the network can"
+
+L2.Fair:
+  question: "Do they deal FAIRLY?"
+  factors:
+    promises_kept: "Delivery vs. commitment ratio — do they do what they say"
+    payment:       "Pay on time, correct amounts, no games"
+    pricing:       "Fair pricing for services/materials — not gouging the network"
+    transparency:  "Open about limitations, delays, problems — no surprises"
+    credit:        "Give credit where due — don't claim others' work"
+    reciprocity:   "Give and take balanced — not just a taker"
+    conflict:      "How they handle disagreements — fair resolution or power plays"
+
+L3.Truthful:
+  question: "Is what they say REAL?"
+  factors:
+    claims_verified: "Claims backed by evidence (e.g. 'stable' → stability data confirms?)"
+    data_accuracy:   "Numbers they provide are correct (costs, timelines, test results)"
+    no_fabrication:  "Never invent results or capabilities they don't have"
+    source_citing:   "Can trace statements back to real data or experience"
+    corrections:     "When wrong, do they correct publicly or hide the error"
+    consistency:     "Same answer to different people — no two-faced behavior"
+    silence:         "Say 'I don't know' when they don't, instead of guessing"
+
+L4.Loyal:
+  question: "Do they PREFER the network?"
+  factors:
+    network_first:     "Use network suppliers/partners before going outside"
+    knowledge_sharing: "Share discoveries with the network, not hoard"
+    referrals:         "Bring new business/people INTO the network"
+    exclusivity:       "Don't work with direct competitors simultaneously"
+    defense:           "Stand up for network members when challenged externally"
+    longevity:         "Duration of relationship — months vs. years measured"
+    crisis:            "How they behave when things go wrong — stay or flee"
+
+L5.Respect:
+  question: "Is their respect EARNED? (peer-measured, not self-declared)"
+  factors:
+    peer_rating:         "What other network members say about working with them"
+    expertise_recognized: "Are they sought out for their specific knowledge"
+    reliability_rep:     "Reputation for delivering — 'you can count on them'"
+    mentorship:          "Do juniors seek their guidance — organic respect signal"
+    conflict_resolution: "When disagreements arise, do others trust their judgment"
+    network_weight:      "Consensus weight — how much their opinion moves decisions"
+    return_rate:         "Do partners come back for repeat collaboration — retention"
+
+L6.Listening:
+  question: "Do they HEAR before they speak?"
+  factors:
+    feedback_response:     "When given feedback, do they adjust or resist"
+    requirement_adherence: "Follow specs ('no Ferulic' → formulator complies?)"
+    question_asking:       "Ask clarifying questions before assuming"
+    adaptation:            "Change approach based on new information"
+    communication_channel: "Respond on the channel you reach out on — don't disappear"
+    turnaround:            "Speed of response — hours vs. days vs. weeks"
+    implementation:        "Feedback → actual change in next delivery (not just acknowledged)"
+
+L7.Teaching:
+  question: "Do they make others BETTER?"
+  factors:
+    knowledge_transfer:  "Actively teach their expertise to network members"
+    documentation:       "Leave written knowledge behind — not just oral"
+    process_improvement: "Make the SYSTEM better, not just their output"
+    mentoring:           "Invest time in developing less experienced members"
+    innovation:          "Introduce new methods, ingredients, approaches"
+    legacy_building:     "Build something that outlasts their involvement"
+    multiplier:          "Their presence makes everyone around them more productive"

@@ -1,0 +1,85 @@
+# 00i Formula/Bulk Matrix
+# OOi.Lens[Product.Physical.Part.Formula]
+#
+# The product itself — what's inside the bottle.
+# Connected to: manufacturer (Pelin), formulator (İsmail), raw material suppliers (EIGENMAN+)
+
+categories:
+  1.Composition:    "INCI list, actives, concentrations, pH, preservative system"
+  2.Raw_Materials:  "Each ingredient sourced, CoA verified, supplier approved"
+  3.Batch_Process:  "Mixing sequence, temperatures, speeds, hold times, equipment"
+  4.Quality_Specs:  "Appearance, pH range, viscosity range, micro limits, color"
+  5.Stability:      "Accelerated + real-time data, shelf life declaration"
+  6.Cost:           "Per-kg COGS, batch size economics, waste factor"
+  7.Compliance:     "EU 1223, restricted substances, allergens, IFRA (if fragrance)"
+
+L1.Giver:
+  question: "What does this formula GIVE?"
+  factors:
+    composition:    "Delivers the claimed benefit at the claimed active level"
+    raw_materials:  "Every ingredient traceable to a verified supplier lot"
+    batch_process:  "Reproducible batch-to-batch — same result every time"
+    quality_specs:  "Meets all specifications at release and through shelf life"
+    stability:      "Stable for declared shelf life under real storage conditions"
+    cost:           "Produced at a cost that allows target margin"
+    compliance:     "Legal to sell in every target market"
+
+L2.Fair:
+  factors:
+    composition:    "Active concentrations are effective doses, not label decoration"
+    raw_materials:  "Supplier pricing transparent — no hidden surcharges"
+    batch_process:  "Process documented completely — no tribal knowledge gaps"
+    quality_specs:  "Specs based on capability data, not arbitrary numbers"
+    stability:      "Shelf life claim matches actual data, not marketing wish"
+    cost:           "True cost calculated including waste, rework, testing"
+    compliance:     "Regulations checked against CURRENT versions, not last year's"
+
+L3.Truthful:
+  factors:
+    composition:    "Batch record matches formula card — verified by QC"
+    raw_materials:  "CoA on file for every lot used — traceable end to end"
+    batch_process:  "Process parameters recorded in real-time, not from memory"
+    quality_specs:  "Release test results on file — signed by QC analyst"
+    stability:      "Stability data is real measurements, not extrapolated"
+    cost:           "Cost sheet auditable — every line item sourced"
+    compliance:     "Compliance dossier complete and current per market"
+
+L4.Loyal:
+  factors:
+    composition:    "Formula uses network-standard ingredient palette where possible"
+    raw_materials:  "Sources from EIGENMAN + network-approved suppliers first"
+    batch_process:  "Manufactured at Pelin Kozmetik (ISO 22716 GMP network partner)"
+    quality_specs:  "QC methods aligned with network standards"
+    stability:      "Stability data shared with network for read-across"
+    cost:           "Volume consolidation across network SKUs for supplier pricing"
+    compliance:     "Regulatory dossier templates shared across network brands"
+
+L5.Respect:
+  factors:
+    composition:    "Formula approved by İsmail (formulator) AND Obelis (safety)"
+    raw_materials:  "Suppliers consider this a priority account"
+    batch_process:  "Hakkı's production team runs this without escalation"
+    quality_specs:  "QC release data accepted by regulatory without query"
+    stability:      "Stability program accepted by assessor at first submission"
+    cost:           "Margin acceptable to all distribution partners"
+    compliance:     "Zero regulatory rejections in any filed market"
+
+L6.Listening:
+  factors:
+    composition:    "Reformulated when user feedback or new data warrants change"
+    raw_materials:  "Supplier switched when quality or availability fails"
+    batch_process:  "Process adjusted when deviation investigation finds root cause"
+    quality_specs:  "Specs tightened when trend data shows drift"
+    stability:      "Shelf life shortened if real-time data contradicts accelerated"
+    cost:           "Cost re-negotiated when raw material markets shift"
+    compliance:     "Dossier updated within 30 days of regulation change"
+
+L7.Teaching:
+  factors:
+    composition:    "Formula rationale documented — WHY each ingredient, not just WHAT"
+    raw_materials:  "Ingredient knowledge base updated with each new sourcing decision"
+    batch_process:  "SOPs written so a new operator can produce without the formulator"
+    quality_specs:  "Spec rationale documented — why each limit, what data drives it"
+    stability:      "Stability study designs templated for future products"
+    cost:           "Cost model shared — any team member can calculate a new SKU's COGS"
+    compliance:     "Regulatory templates created for the next product filing"

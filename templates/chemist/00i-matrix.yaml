@@ -1,0 +1,98 @@
+# 00i Chemist Matrix — The 7 pillars of a cosmetics chemist
+# OOi.Lens[Chemist.skills[Cosmetic.Formulations]]
+#
+# A chemist IS an OOi object. Their 7 categories map to L1-L7.
+# Sub-specializations nest: Chemist > Dermaceuticals, R&D Formulation, Lab Experience
+#
+# The 7 categories of a chemist (what makes a chemist a chemist):
+
+categories:
+  1.Formulation:    "Designing the recipe — base systems, actives, preservation, texture"
+  2.Raw_Materials:  "Knowing ingredients — INCI, suppliers, interactions, alternatives"
+  3.Testing:        "Proving it works — stability, safety, efficacy, challenge"
+  4.Regulatory:     "Making it legal — EU 1223, CPSR, PIF, per-market filing"
+  5.Manufacturing:  "Scaling it up — GMP, batch records, equipment, reproducibility"
+  6.Quality_Control: "Keeping it right — specs, release testing, deviation handling"
+  7.Innovation:     "Making it better — new actives, new delivery, new methods"
+
+# ── OOi × 00i crossing ────────────────────────────────────────────────────
+# Rows = 00i questions (Giver through Teaching)
+# Columns = the 7 chemist categories above
+# Each cell = "what does this 00i question mean for this category?"
+
+L1.Giver:
+  question: "What does this chemist GIVE in each category?"
+  factors:
+    formulation:     "Produces working formulas that solve real skin problems"
+    raw_materials:   "Knows which ingredients deliver which benefits at which concentrations"
+    testing:         "Designs and executes test protocols that produce defensible data"
+    regulatory:      "Prepares documentation that passes authority review first time"
+    manufacturing:   "Writes batch procedures that production can follow without the chemist present"
+    quality_control: "Sets specifications tight enough to catch problems, loose enough to produce"
+    innovation:      "Introduces new ingredients or methods the lab didn't have before"
+
+L2.Fair:
+  question: "Is this chemist's work HONEST in each category?"
+  factors:
+    formulation:     "Actives at effective concentrations, not pixie-dusted for label claims"
+    raw_materials:   "Reports true ingredient costs, no hidden markups on sourced materials"
+    testing:         "Reports negative results honestly — doesn't cherry-pick passing data"
+    regulatory:      "Doesn't cut corners on documentation to meet deadlines"
+    manufacturing:   "Acknowledges when a formula can't scale rather than forcing it"
+    quality_control: "Doesn't override out-of-spec results under pressure to ship"
+    innovation:      "Credits the source of innovations — doesn't claim borrowed ideas"
+
+L3.Truthful:
+  question: "Can this chemist's claims be VERIFIED in each category?"
+  factors:
+    formulation:     "Formula matches the batch record — what's written is what's made"
+    raw_materials:   "CoA (Certificate of Analysis) matches actual delivery every time"
+    testing:         "Raw data available for every claimed result — traceable, auditable"
+    regulatory:      "Every filed document matches the current product version"
+    manufacturing:   "Batch records complete and signed — no gaps, no backdating"
+    quality_control: "Analytical results reproducible by a second analyst"
+    innovation:      "New claims backed by comparative data, not just novelty"
+
+L4.Loyal:
+  question: "Does this chemist PREFER the network in each category?"
+  factors:
+    formulation:     "Uses network-approved ingredient palette before sourcing outside"
+    raw_materials:   "Buys from network suppliers (EIGENMAN, Pelin) when quality equals"
+    testing:         "Shares test protocols with network labs, not proprietary hoarding"
+    regulatory:      "Shares regulatory learnings across network brands (BP Derma → Aktif8)"
+    manufacturing:   "Trains network production staff (Hakkı's team) on new procedures"
+    quality_control: "Standardizes QC methods across network products for efficiency"
+    innovation:      "Publishes findings within network before seeking external recognition"
+
+L5.Respect:
+  question: "Is this chemist RESPECTED by peers in each category?"
+  factors:
+    formulation:     "Other formulators seek their opinion on difficult base systems"
+    raw_materials:   "Suppliers value their feedback and prioritize their orders"
+    testing:         "Regulatory bodies accept their test reports without re-testing"
+    regulatory:      "Assessors (Obelis) trust their documentation as complete"
+    manufacturing:   "Production team trusts their batch instructions without questioning"
+    quality_control: "QC team defers to their specifications as gold standard"
+    innovation:      "Industry peers cite their formulation approaches"
+
+L6.Listening:
+  question: "Does this chemist RESPOND to feedback in each category?"
+  factors:
+    formulation:     "Reformulates when user feedback says texture is wrong"
+    raw_materials:   "Switches suppliers when quality data shows a better source"
+    testing:         "Adjusts protocols when initial results suggest a different approach"
+    regulatory:      "Updates documentation when regulations change (not just at renewal)"
+    manufacturing:   "Modifies procedures when production reports a scaling issue"
+    quality_control: "Tightens specs when batch variation data shows a trend"
+    innovation:      "Pivots R&D direction when market data contradicts initial hypothesis"
+
+L7.Teaching:
+  question: "Does this chemist make the TEAM better in each category?"
+  factors:
+    formulation:     "Documents formula rationale so others can learn why, not just what"
+    raw_materials:   "Maintains an ingredient knowledge base accessible to the team"
+    testing:         "Trains junior staff on test protocols and interpretation"
+    regulatory:      "Creates templates and checklists others can reuse for new products"
+    manufacturing:   "Writes SOPs that transfer knowledge from expert to operator"
+    quality_control: "Teaches the why behind each spec so QC understands, not just measures"
+    innovation:      "Publishes learnings (what failed and why) not just successes"

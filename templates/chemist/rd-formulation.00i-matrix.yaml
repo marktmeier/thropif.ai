@@ -1,0 +1,93 @@
+# 00i Chemist.R&D Cosmetic Formulation Matrix
+# OOi.Lens[Chemist.skills[R&D Cosmetic Formulation]]
+#
+# The craft of creating cosmetic formulas from concept to stable product.
+# This is where İsmail lives — the lab bench, the beaker, the iteration.
+#
+# The 7 categories of R&D Formulation:
+
+categories:
+  1.Base_Systems:       "The foundation — emulsion type (O/W, W/O, W/Si), gel matrix, solution, suspension, anhydrous"
+  2.Active_Integration: "Getting actives into the base — solubility, stability, compatibility, effective concentration"
+  3.Preservation:       "Keeping it safe — preservative system design, challenge testing, hurdle technology"
+  4.Sensory_Texture:    "Making it feel right — spreadability, absorption, tackiness, fragrance, color, afterfeel"
+  5.Stability:          "Making it last — accelerated testing, real-time, freeze-thaw, light exposure, oxidation"
+  6.Compatibility:      "Making it work with everything — packaging, other products in routine, ingredient interactions"
+  7.Scale_Up:           "Lab to factory — pilot batch, equipment translation, reproducibility, process parameters"
+
+L1.Giver:
+  question: "What does this R&D formulation skill GIVE?"
+  factors:
+    base_systems:      "Can design O/W, W/O, gel, serum, foam bases from first principles"
+    active_integration: "Knows solubility parameters and stability windows for 100+ actives"
+    preservation:      "Designs preservative systems that pass challenge test first time"
+    sensory_texture:   "Creates textures that users love — measurable by sensory panel"
+    stability:         "Formulas pass 40°C/75%RH 6-month on first submission"
+    compatibility:     "No packaging migration, no ingredient precipitation, no color shift"
+    scale_up:          "Lab formula reproduces at 500kg batch within spec"
+
+L2.Fair:
+  question: "Is the formulation work HONEST?"
+  factors:
+    base_systems:      "Chooses base for product need, not formula simplicity"
+    active_integration: "Uses effective concentrations, not minimum for label"
+    preservation:      "Adequate preservation without overshooting (paraben-free when genuinely possible)"
+    sensory_texture:   "Texture serves function, not just marketing appeal"
+    stability:         "Tests at real conditions, doesn't accelerate beyond relevance"
+    compatibility:     "Tests actual packaging materials, not generic surrogates"
+    scale_up:          "Reports honestly when lab formula won't scale"
+
+L3.Truthful:
+  question: "Can the formulation data be VERIFIED?"
+  factors:
+    base_systems:      "Emulsion type confirmed by microscopy, not assumed from recipe"
+    active_integration: "Active concentration verified by HPLC at t=0 and end of shelf life"
+    preservation:      "Challenge test raw data available (CFU counts per interval)"
+    sensory_texture:   "Sensory evaluation scored by trained panel, not single opinion"
+    stability:         "Full stability protocol documented (chambers, timepoints, parameters)"
+    compatibility:     "Packaging compatibility report with migration and sorption data"
+    scale_up:          "Pilot batch analytical results vs. lab batch — deviation report"
+
+L4.Loyal:
+  question: "Does the formulation work PREFER the network?"
+  factors:
+    base_systems:      "Uses network-standardized base platforms when possible (reduces validation)"
+    active_integration: "Sources actives from network suppliers first"
+    preservation:      "Standardizes preservation approach across portfolio for efficiency"
+    sensory_texture:   "Develops textures within the brand's sensory identity"
+    stability:         "Shares stability data across similar formulations (bracketing)"
+    compatibility:     "Uses network-approved packaging suppliers and materials"
+    scale_up:          "Trains Hakkı's production team on each new formula's critical parameters"
+
+L5.Respect:
+  question: "Is this formulation skill RESPECTED?"
+  factors:
+    base_systems:      "Other formulators consult on difficult emulsion problems"
+    active_integration: "Suppliers send new actives for their evaluation first"
+    preservation:      "Preservative system rarely fails at challenge — track record"
+    sensory_texture:   "Marketing trusts their texture development without external benchmarking"
+    stability:         "Regulatory assessors accept stability data without additional testing requests"
+    compatibility:     "Packaging suppliers seek their input on new material development"
+    scale_up:          "Production team success rate on first commercial batch"
+
+L6.Listening:
+  question: "Does the formulation work RESPOND to feedback?"
+  factors:
+    base_systems:      "Switches base system when stability data says current one fails"
+    active_integration: "Adjusts concentration when clinical data shows dose-response curve"
+    preservation:      "Redesigns preservation when challenge test fails (not just retest)"
+    sensory_texture:   "Reformulates when consumer panel says texture is wrong"
+    stability:         "Adds antioxidant when 3-month data shows early degradation"
+    compatibility:     "Changes packaging when migration testing shows interaction"
+    scale_up:          "Modifies process when pilot batch shows temperature sensitivity"
+
+L7.Teaching:
+  question: "Does this formulation work make the TEAM better?"
+  factors:
+    base_systems:      "Documents base system selection rationale for future formulators"
+    active_integration: "Maintains active ingredient compatibility database"
+    preservation:      "Creates preservation decision tree for the lab team"
+    sensory_texture:   "Builds sensory reference library (benchmark products + descriptors)"
+    stability:         "Writes stability study design templates reusable by juniors"
+    compatibility:     "Publishes packaging compatibility matrix for common materials"
+    scale_up:          "Creates scale-up checklists that prevent known failure modes"

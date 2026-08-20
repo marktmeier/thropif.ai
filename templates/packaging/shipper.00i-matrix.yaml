@@ -1,0 +1,83 @@
+# 00i Shipper/Master Carton Matrix
+# OOi.Lens[Product.Physical.Part.Shipper]
+# The outer box that carries 12/24/48 units through logistics.
+# Connected to: product (units per shipper), logistics (palletization), market (customs)
+
+categories:
+  1.Structure:    "Corrugated type (RSC, FOL), flute (B, C, BC), dimensions, dividers"
+  2.Strength:     "BCT (box compression test), ECT (edge crush), stacking, drop test"
+  3.Packing:      "Units per shipper, arrangement, void fill, weight per shipper"
+  4.Marking:      "Shipping marks, barcode (ITF-14), batch, origin, handling symbols"
+  5.Palletization: "Shippers per layer, layers per pallet, pallet wrap, corner posts"
+  6.Cost:         "Per-shipper cost, volume pricing, custom vs stock sizes"
+  7.Logistics:    "Warehouse compatibility, truck fit, customs documentation, country marks"
+
+L1.Giver:
+  factors:
+    structure:      "Protects product through entire supply chain — factory to shelf"
+    strength:       "Survives stacking 5-high in container for 30 days at sea"
+    packing:        "Efficient unit count — maximizes cube utilization"
+    marking:        "Correct identification — warehouse picks the right box every time"
+    palletization:  "Fits standard EUR/US pallet — no overhang, no wasted space"
+    cost:           "Cost-effective for shipment value ratio"
+    logistics:      "Clears customs without delay — all marks and docs correct"
+
+L2.Fair:
+  factors:
+    structure:      "Corrugated spec matches order — no thinner board substituted"
+    strength:       "BCT test result matches declared value"
+    packing:        "Actual units per shipper matches what's on the label"
+    marking:        "All marks accurate — no wrong batch, no wrong destination"
+    palletization:  "Pallet pattern matches the pallet spec sheet"
+    cost:           "Invoice matches quote — no surprise charges"
+    logistics:      "Documents match physical shipment — no discrepancy"
+
+L3.Truthful:
+  factors:
+    structure:      "Board certificate on file — flute type, grammage, supplier"
+    strength:       "BCT/ECT test report on file — tested on actual production shipper"
+    packing:        "Packing instruction document — signed and version controlled"
+    marking:        "Marking specification document — approved by logistics"
+    palletization:  "Pallet specification — layer pattern diagram on file"
+    cost:           "Purchase order matches shipper specification"
+    logistics:      "Shipping documents template verified per destination country"
+
+L4.Loyal:
+  factors:
+    structure:      "Uses network-approved corrugated supplier"
+    strength:       "Strength spec standardized across product portfolio"
+    packing:        "Standardizes units-per-shipper across similar SKUs"
+    marking:        "Uses network-standard shipping mark format"
+    palletization:  "Standardizes pallet configuration across shipments"
+    cost:           "Consolidates shipper orders for volume pricing"
+    logistics:      "Uses network logistics partners (freight forwarders)"
+
+L5.Respect:
+  factors:
+    structure:      "Zero shipment damage claims in 12 months"
+    strength:       "Distributor warehouses accept without complaint"
+    packing:        "Ahmed (Jordan), Vietnam, Bangladesh distributors report no damage"
+    marking:        "Customs clearance first-time-pass rate per market"
+    palletization:  "Freight company accepts without repacking"
+    cost:           "Cost benchmarked against industry standard for this category"
+    logistics:      "Lead time reliability — shipper available when filling starts"
+
+L6.Listening:
+  factors:
+    structure:      "Redesigned when damage reports come from specific route"
+    strength:       "Upgraded when new market requires sea freight (higher humidity)"
+    packing:        "Adjusted when distributor requests different unit count"
+    marking:        "Updated when destination country changes import marking rules"
+    palletization:  "Reconfigured when truck/container dimensions change"
+    cost:           "Re-sourced when cost exceeds % threshold of product value"
+    logistics:      "Adapted when customs rejects a documentation format"
+
+L7.Teaching:
+  factors:
+    structure:      "Shipper design guide documented — how to spec a new shipper"
+    strength:       "Strength-to-route matrix — which BCT for which shipping lane"
+    packing:        "Packing instruction template — reusable for new products"
+    marking:        "Per-market marking requirements database maintained"
+    palletization:  "Pallet optimization guide — maximize container utilization"
+    cost:           "Cost-per-unit-shipped benchmark tracked over time"
+    logistics:      "Customs documentation checklist per destination country"

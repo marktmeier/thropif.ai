@@ -1,0 +1,93 @@
+# 00i Chemist.Lab Experience Matrix
+# OOi.Lens[Chemist.skills[Lab.Experience]]
+#
+# The hands-on practical world. Not theory — the bench.
+# Where İsmail's hands meet the beaker. Where Hakkı's team meets the 500kg mixer.
+#
+# The 7 categories of Lab Experience:
+
+categories:
+  1.Equipment:        "The machines — homogenizers, pH meters, viscometers, stability chambers, HPLC, mixers"
+  2.Measurement:      "The precision — weighing, titration, spectroscopy, particle size, rheology"
+  3.Protocols:        "The discipline — SOPs, batch records, lab notebooks, documentation chain"
+  4.Safety:           "The protection — MSDS/SDS, PPE, chemical handling, waste, spill procedures"
+  5.Troubleshooting:  "The skill — when a batch fails, finding why and fixing it"
+  6.GMP:              "The standard — clean room, hygiene, cross-contamination, qualification"
+  7.Analysis:         "The proof — HPLC, GC, micro testing, stability chamber operation, pH/viscosity"
+
+L1.Giver:
+  question: "What does this lab experience GIVE?"
+  factors:
+    equipment:        "Can operate all core lab equipment without supervision"
+    measurement:      "Produces measurements accurate to the method's specified precision"
+    protocols:        "Follows SOPs exactly — no shortcuts, no undocumented deviations"
+    safety:           "Maintains safe lab environment — zero incidents under their watch"
+    troubleshooting:  "Diagnoses batch failures from visual, analytical, and process clues"
+    gmp:              "Maintains GMP compliance in every batch they touch"
+    analysis:         "Produces analytical results that pass external audit"
+
+L2.Fair:
+  question: "Is the lab work HONEST?"
+  factors:
+    equipment:        "Reports equipment malfunctions immediately, doesn't work around them"
+    measurement:      "Records actual readings, not expected values"
+    protocols:        "Documents deviations when they happen, not after the fact"
+    safety:           "Reports near-misses, not just actual incidents"
+    troubleshooting:  "Admits when the root cause is unknown rather than guessing"
+    gmp:              "Flags GMP violations by anyone, including senior staff"
+    analysis:         "Reports out-of-spec results without rerunning until they pass"
+
+L3.Truthful:
+  question: "Can the lab work be VERIFIED?"
+  factors:
+    equipment:        "Calibration records current and traceable (ISO 17025 where applicable)"
+    measurement:      "Measurement uncertainty calculated and documented per method"
+    protocols:        "Batch records signed, dated, witnessed — no blank fields"
+    safety:           "SDS sheets current for every chemical in the lab (updated < 3 years)"
+    troubleshooting:  "Failure investigations documented with root cause, corrective action, evidence"
+    gmp:              "Cleaning validation records complete — swab tests, visual inspection logs"
+    analysis:         "Method validation data on file — linearity, precision, accuracy, LOD/LOQ"
+
+L4.Loyal:
+  question: "Does this lab experience SERVE the network?"
+  factors:
+    equipment:        "Shares equipment maintenance knowledge across network labs"
+    measurement:      "Uses network-standardized methods for comparability across sites"
+    protocols:        "Uses common SOP templates so any network lab can reproduce"
+    safety:           "Shares safety learnings (incidents, near-misses) across network"
+    troubleshooting:  "Documents fixes so the next person doesn't repeat the investigation"
+    gmp:              "Maintains GMP standards even when no audit is scheduled"
+    analysis:         "Participates in inter-lab comparison studies within the network"
+
+L5.Respect:
+  question: "Is this lab experience RECOGNIZED?"
+  factors:
+    equipment:        "Other labs consult them on equipment selection and maintenance"
+    measurement:      "Their analytical results are accepted without re-testing by partners"
+    protocols:        "Auditors comment positively on their documentation quality"
+    safety:           "Safety record — years without incident, peer recognition"
+    troubleshooting:  "Production calls them first when a batch goes wrong"
+    gmp:              "Pass rate on external GMP audits (ISO 22716)"
+    analysis:         "Proficiency testing results — z-scores within acceptable range"
+
+L6.Listening:
+  question: "Does this lab experience ADAPT?"
+  factors:
+    equipment:        "Upgrades equipment when data shows current gear limits quality"
+    measurement:      "Adopts new methods when they're proven more accurate or faster"
+    protocols:        "Updates SOPs when process changes or regulations change"
+    safety:           "Changes procedures after a near-miss, not only after an incident"
+    troubleshooting:  "Learns from each failure — pattern recognition improves over time"
+    gmp:              "Adapts to new GMP requirements within 30 days of publication"
+    analysis:         "Switches analytical methods when compendial methods update"
+
+L7.Teaching:
+  question: "Does this lab experience make OTHERS better?"
+  factors:
+    equipment:        "Trains new staff on every piece of equipment before solo operation"
+    measurement:      "Creates measurement technique videos or visual guides for the lab"
+    protocols:        "Writes SOPs clear enough that a new hire can follow on day one"
+    safety:           "Conducts regular safety drills and refresher training"
+    troubleshooting:  "Teaches root-cause analysis methodology, not just fixes"
+    gmp:              "Mentors production staff on GMP mindset, not just GMP rules"
+    analysis:         "Trains juniors on instrument operation AND data interpretation"

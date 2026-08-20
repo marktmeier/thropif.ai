@@ -1,0 +1,98 @@
+# 00i Carton Box Matrix
+# OOi.Lens[Product.Physical.Packaging.CartonBox]
+#
+# A carton box is an OOi object. Same 7 layers. Same 3,199 cells.
+# It connects to: product (what's inside), brand (whose face),
+# supplier (who makes it), regulatory (what text is required).
+#
+# A box is not "just packaging" — it is the first thing the customer touches.
+# It carries regulatory text that makes the product legal in each market.
+# A wrong box = a blocked shipment.
+#
+# The 7 categories of a carton box:
+
+categories:
+  1.Design:      "The face — artwork, layout, brand identity, shelf presence"
+  2.Material:    "The body — cardboard grade, coating, weight, sustainability, feel"
+  3.Print:       "The color — Pantone matching, process colors, foil, emboss, UV varnish"
+  4.Structure:   "The engineering — dimensions, die-cut, flaps, inserts, protection, opening"
+  5.Text:        "The law — INCI list, batch code, expiry, barcode, per-market language, warnings"
+  6.Production:  "The making — MOQ, tooling, plates, lead time, supplier, warehouse"
+  7.Quality:     "The proof — color ΔE, barcode grade, structural test, drop test, shelf fit"
+
+L1.Giver:
+  question: "What does this carton box GIVE?"
+  factors:
+    design:      "Communicates the product identity — customer recognizes the brand instantly"
+    material:    "Protects the product inside — no crushing, no moisture, no light damage"
+    print:       "Reproduces brand colors accurately — Pantone match within ΔE < 2"
+    structure:   "Fits the bottle/tube exactly — no rattle, easy open, clean shelf stack"
+    text:        "Carries all legally required text — product is sellable in target market"
+    production:  "Available when needed — lead time meets launch/reorder schedule"
+    quality:     "Consistent unit to unit — no variation visible to customer"
+
+L2.Fair:
+  question: "Is this carton box HONEST?"
+  factors:
+    design:      "Design matches actual product — no misleading imagery or size impression"
+    material:    "Material grade matches specification — not downgraded after approval"
+    print:       "Proof matches production run — no color shift between approval and delivery"
+    structure:   "Dimensions match technical drawing — tolerance ±0.5mm"
+    text:        "All text verified against current regulations — no outdated claims"
+    production:  "Quoted price matches invoice — no hidden tooling or plate charges"
+    quality:     "Reject rate reported honestly — not hidden in the delivery"
+
+L3.Truthful:
+  question: "Can the carton box data be VERIFIED?"
+  factors:
+    design:      "Approved artwork file on record — version controlled, signed off by Tuna"
+    material:    "Material certificate from supplier — grade, gsm, coating type documented"
+    print:       "Press proof signed and dated — Pantone drawdown on actual stock"
+    structure:   "CAD die-line on file — dimensions, crease scores, glue flaps specified"
+    text:        "Text content approved by regulatory (per-market signoff checklist)"
+    production:  "Purchase order matches specification — supplier confirmed in writing"
+    quality:     "Incoming QC report — ΔE measurement, barcode scan grade, sample retained"
+
+L4.Loyal:
+  question: "Does this carton box PREFER the network?"
+  factors:
+    design:      "Uses network brand design system — consistent across all BP Derma SKUs"
+    material:    "Sources from network-approved material suppliers"
+    print:       "Uses network-approved print house (consistent quality across portfolio)"
+    structure:   "Standardizes box dimensions where possible (reduces tooling cost)"
+    text:        "Uses network text templates (same regulatory block across SKUs per market)"
+    production:  "Consolidates orders across SKUs for volume pricing"
+    quality:     "QC standards shared across all network packaging (same ΔE tolerance)"
+
+L5.Respect:
+  question: "Is this carton box RESPECTED in the market?"
+  factors:
+    design:      "Shelf presence — does it stand out next to competitors at pharmacy/retail?"
+    material:    "Feel in hand — does the material communicate quality (not flimsy, not wasteful)?"
+    print:       "Print quality perceived by customer — clean, sharp, professional"
+    structure:   "Unboxing experience — easy to open, product visible, no damage"
+    text:        "Readability — font size, contrast, information hierarchy"
+    production:  "Supplier reliability — on-time delivery rate, defect rate history"
+    quality:     "Retailer acceptance — does the box meet retailer packaging standards (Rossmann, pharmacy chains)?"
+
+L6.Listening:
+  question: "Does the carton box RESPOND to feedback?"
+  factors:
+    design:      "Design updated when brand refresh happens — not running old artwork"
+    material:    "Material changed when customer feedback says 'feels cheap' or 'wasteful'"
+    print:       "Color corrected when ΔE drift detected between batches"
+    structure:   "Redesigned when logistics reports damage during shipping"
+    text:        "Updated immediately when regulation changes (new allergen list, new warnings)"
+    production:  "Supplier switched when quality or delivery consistently fails"
+    quality:     "Specs tightened when market feedback identifies a visible defect"
+
+L7.Teaching:
+  question: "Does this carton box make the SYSTEM better?"
+  factors:
+    design:      "Design guidelines documented — new products use the same template"
+    material:    "Material selection rationale documented — why this grade, why this coating"
+    print:       "Color standards documented — Pantone references + acceptable ΔE range"
+    structure:   "Die-line library maintained — reusable structures for new products"
+    text:        "Regulatory text database maintained — per-market text blocks ready to paste"
+    production:  "Supplier evaluation criteria documented — how to assess a new print house"
+    quality:     "QC checklist created — any team member can inspect incoming boxes"

@@ -1,0 +1,94 @@
+# 00i Chemist.Dermaceuticals Matrix
+# OOi.Lens[Chemist.skills[Dermaceuticals]]
+#
+# Dermaceuticals = cosmetics with dermatological claims
+# The border between cosmetic and pharmaceutical.
+# BP Derma lives here: "Beauty & Pharma Dermaceuticals"
+#
+# The 7 categories of Dermaceuticals:
+
+categories:
+  1.Active_Ingredients: "The molecules that DO something — peptides, retinoids, niacinamide, AHAs, vitamin C derivatives"
+  2.Skin_Biology:       "Understanding the target — barrier function, TEWL, microbiome, pH, inflammation pathways"
+  3.Clinical_Evidence:  "Proving it on humans — patch tests, clinical studies, instrumental measurements"
+  4.Safety_Assessment:  "Proving it's safe — MoS, CPSR, toxicological profiles, sensitization potential"
+  5.Delivery_Systems:   "Getting actives where they work — encapsulation, penetration, targeted release"
+  6.Claims_Substantiation: "Saying only what you can prove — claim-to-evidence mapping, regulatory language"
+  7.Regulatory_Classification: "Cosmetic vs. drug vs. borderline — knowing where the line is per market"
+
+L1.Giver:
+  question: "What does this dermaceutical expertise GIVE?"
+  factors:
+    active_ingredients:  "Knows which actives work at which concentration for which condition"
+    skin_biology:        "Understands why a formulation works, not just that it works"
+    clinical_evidence:   "Designs studies that produce publishable, defensible efficacy data"
+    safety_assessment:   "Calculates MoS correctly, identifies sensitization risks early"
+    delivery_systems:    "Selects delivery that maximizes active bioavailability at target depth"
+    claims_substantiation: "Writes claims that are both marketable AND substantiable"
+    regulatory_classification: "Keeps products on the cosmetic side of the line (avoids drug classification)"
+
+L2.Fair:
+  question: "Is the dermaceutical work HONEST?"
+  factors:
+    active_ingredients:  "Uses actives at proven efficacious doses, not marketing minimums"
+    skin_biology:        "Acknowledges when mechanism of action is theoretical vs. proven"
+    clinical_evidence:   "Reports full study results including non-significant endpoints"
+    safety_assessment:   "Flags potential risks even when they might delay launch"
+    delivery_systems:    "Doesn't claim 'deep penetration' without permeation data"
+    claims_substantiation: "Doesn't use 'clinically proven' for in-vitro-only data"
+    regulatory_classification: "Doesn't disguise a drug claim as a cosmetic claim to avoid filing"
+
+L3.Truthful:
+  question: "Can the dermaceutical claims be VERIFIED?"
+  factors:
+    active_ingredients:  "Concentration verified by HPLC, not just calculated from batch weight"
+    skin_biology:        "Mechanism claims supported by published peer-reviewed literature"
+    clinical_evidence:   "Raw clinical data available, statistics correctly applied, n sufficient"
+    safety_assessment:   "MoS calculation auditable — exposure assumptions documented"
+    delivery_systems:    "Penetration claims backed by Franz cell or tape-stripping data"
+    claims_substantiation: "Every claim linked to a specific test protocol and result number"
+    regulatory_classification: "Classification reasoning documented per EU guidance (SCCS notes)"
+
+L4.Loyal:
+  question: "Does this expertise PREFER the network?"
+  factors:
+    active_ingredients:  "Shares active ingredient learnings across network brands"
+    skin_biology:        "Builds shared skin biology knowledge base for all formulators"
+    clinical_evidence:   "Uses network-approved CROs and testing facilities"
+    safety_assessment:   "Shares toxicological profiles across similar products (read-across)"
+    delivery_systems:    "Develops delivery tech reusable across multiple network SKUs"
+    claims_substantiation: "Creates claim templates reusable by marketing across the portfolio"
+    regulatory_classification: "Maintains per-market classification guidance for the whole network"
+
+L5.Respect:
+  question: "Is this dermaceutical expertise RESPECTED by peers?"
+  factors:
+    active_ingredients:  "Dermatologists reference their ingredient selection rationale"
+    skin_biology:        "Academic partners seek collaboration based on their understanding"
+    clinical_evidence:   "Regulatory assessors accept their study designs without revision"
+    safety_assessment:   "Safety assessors (Obelis) trust their toxicological work"
+    delivery_systems:    "Supplier R&D teams consult them on formulation compatibility"
+    claims_substantiation: "Marketing trusts their claim boundaries without pushing back"
+    regulatory_classification: "Legal/regulatory teams defer to their classification judgment"
+
+L6.Listening:
+  question: "Does this expertise RESPOND to new information?"
+  factors:
+    active_ingredients:  "Updates formulations when new efficacy data changes best practice"
+    skin_biology:        "Incorporates microbiome research into preservation strategy"
+    clinical_evidence:   "Adjusts study design when early results suggest different endpoints"
+    safety_assessment:   "Re-calculates MoS when SCCS updates reference values"
+    delivery_systems:    "Adopts new encapsulation tech when supplier data proves superiority"
+    claims_substantiation: "Revises claims when post-market surveillance shows different results"
+    regulatory_classification: "Reclassifies products when regulatory guidance changes"
+
+L7.Teaching:
+  question: "Does this expertise make the FIELD better?"
+  factors:
+    active_ingredients:  "Publishes ingredient interaction findings for the industry"
+    skin_biology:        "Contributes to open-access skin biology education"
+    clinical_evidence:   "Shares study methodology improvements beyond proprietary advantage"
+    safety_assessment:   "Trains junior toxicologists on MoS methodology"
+    delivery_systems:    "Documents delivery system failures so others avoid the same mistakes"
+    claims_substantiation: "Creates claim-writing guidelines that elevate industry standards"
+    regulatory_classification: "Contributes to regulatory harmonization discussions"

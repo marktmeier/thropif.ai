@@ -1,0 +1,83 @@
+# 00i Label Matrix (Front + Back or Wrap-Around)
+# OOi.Lens[Product.Physical.Part.Label]
+# The label is the product's identity ON the shelf.
+# Connected to: brand (design), regulatory (text), bottle (application), printer
+
+categories:
+  1.Design:       "Layout, typography, brand colors, front vs back panel hierarchy"
+  2.Material:     "PP, PE, paper, metallic, transparent, waterproof — substrate choice"
+  3.Adhesive:     "Permanent, removable, repositionable — must survive product lifecycle"
+  4.Print:        "Digital, flexo, offset — color accuracy, resolution, variable data (batch/expiry)"
+  5.Text_Content: "INCI list (6pt min), claims, warnings, languages, PAO symbol, batch area"
+  6.Application:  "Machine-applied or hand — speed, registration, bubble-free, orientation"
+  7.Regulatory:   "Per-market requirements: EU (1223 Art.19), TR (ÜTS), export markets"
+
+L1.Giver:
+  factors:
+    design:        "Communicates product identity — customer reads and understands instantly"
+    material:      "Survives bathroom conditions — water, humidity, oil from hands"
+    adhesive:      "Stays on through product lifetime — no peeling, no lifting edges"
+    print:         "Sharp, readable text at 6pt — INCI list legible under store lighting"
+    text_content:  "All required information present — product is legally sellable"
+    application:   "Applied straight, centered, bubble-free on every unit"
+    regulatory:    "Meets every regulatory text requirement for every target market"
+
+L2.Fair:
+  factors:
+    design:        "Design doesn't mislead — product size/benefit visually honest"
+    material:      "Material spec matches delivery — no downgrade after approval"
+    adhesive:      "Adhesive tested on actual bottle material (not just spec sheet claim)"
+    print:         "Proof matches production — no color shift, no text reflow"
+    text_content:  "All claims on label substantiated by test data"
+    application:   "Application tolerance documented and met (±1mm position)"
+    regulatory:    "Regulatory text reviewed by qualified person, not just translated"
+
+L3.Truthful:
+  factors:
+    design:        "Approved artwork on file — version controlled, signed by Tuna"
+    material:      "Material certificate: substrate type, thickness, water resistance rating"
+    adhesive:      "Adhesion test report: initial tack, 24h bond, wet resistance"
+    print:         "Color proof signed — Pantone drawdown on actual substrate"
+    text_content:  "INCI list verified against batch record — exact match"
+    application:   "Application equipment calibration log current"
+    regulatory:    "Per-market text signoff checklist completed and filed"
+
+L4.Loyal:
+  factors:
+    design:        "Uses BP Derma design system — consistent across all 19 SKUs"
+    material:      "Network-approved label stock for supplier volume pricing"
+    adhesive:      "Standardized adhesive across product line (one qualification)"
+    print:         "Network label printer — consistent quality, consolidated billing"
+    text_content:  "Network text templates — same regulatory blocks across SKUs"
+    application:   "Same application equipment across production line"
+    regulatory:    "Regulatory template shared across network brands"
+
+L5.Respect:
+  factors:
+    design:        "Label design contributes to shelf differentiation vs competitors"
+    material:      "Material quality perceived by customer as premium"
+    adhesive:      "Zero in-market complaints about label peeling"
+    print:         "Print quality passes retailer incoming inspection"
+    text_content:  "Pharmacist can read INCI — font size and contrast sufficient"
+    application:   "Application quality consistent — no rejects at filling line"
+    regulatory:    "Regulatory authority accepts label at first review"
+
+L6.Listening:
+  factors:
+    design:        "Updated when brand refresh changes color/typography"
+    material:      "Changed when customer feedback reports peeling in wet conditions"
+    adhesive:      "Upgraded when new bottle surface coating changes adhesion"
+    print:         "Corrected when batch shows color deviation"
+    text_content:  "Updated within 30 days when INCI or regulation changes"
+    application:   "Equipment re-calibrated when position drift detected"
+    regulatory:    "Label reprinted when market-specific regulation updates"
+
+L7.Teaching:
+  factors:
+    design:        "Label design guidelines documented for new product launches"
+    material:      "Substrate selection guide — which material for which environment"
+    adhesive:      "Adhesive compatibility matrix — which adhesive for which bottle"
+    print:         "Print specification template reusable for new SKUs"
+    text_content:  "Regulatory text database — copy-paste blocks per market per language"
+    application:   "Application troubleshooting guide for production team"
+    regulatory:    "Per-market regulatory checklist — what must be on label, where, how"

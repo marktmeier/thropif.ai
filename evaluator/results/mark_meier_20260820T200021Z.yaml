@@ -1,0 +1,271 @@
+person: Mark Meier
+timestamp: '2026-08-20T20:00:21.192207+00:00'
+model: clawd-rift-16k
+elapsed_seconds: 778.2
+truth:
+  rate: 0.5714
+  filled: 28
+  total: 49
+  avg_score: 0.5204
+layers:
+  L1:
+    layer: L1
+    agent: Scout
+    name: Giver
+    question: What does this person GIVE to the network?
+    model: clawd-rift-16k
+    evidence_count: 2
+    factors:
+      skill:
+        score: 1.0
+        reasoning: Evidence confirms Mark Meier is a Market Channel specialist covering GCC, UK, and Asia.
+      output:
+        score: 0.5
+        reasoning: No specific deliverables like reports or contracts were found in the provided chat
+          logs; only a deleted message reference exists.
+      availability:
+        score: 1.0
+        reasoning: The conversation shows Mark responding within minutes of Dr Osama's messages, indicating
+          high responsiveness.
+      initiative:
+        score: 0.5
+        reasoning: Evidence is limited to a single thread where Mark responded directly; no proactive
+          offers beyond answering questions are visible.
+      quality:
+        score: 1.0
+        reasoning: Mark's role as a specialist in multiple regions implies high precision and reliability
+          in his market channel expertise.
+      volume:
+        score: 0.5
+        reasoning: The provided evidence contains only one interaction; insufficient data to determine
+          if contributions are occasional or high-volume.
+      uniqueness:
+        score: 1.0
+        reasoning: His simultaneous specialization across GCC, UK, and Asia markets represents a distinct
+          skill set not shared by others in the network.
+    evidence_warnings:
+    - "Traceback (most recent call last):\n  File \"/Users/markmeier/Projects/thropif.ai/tools/memory.py\"\
+      , line 285, in <module>\n    main()\n    ~~~~^^\n  File \"/Users/markmeier/Projects/thropif.ai/tools/memory.py\"\
+      , line 275, in main\n    cmd_recall(args)\n    ~~~~~~~~~~^^^^^^\n  File \"/Users/markmeier/Projects/t"
+  L2:
+    layer: L2
+    agent: Auditor
+    name: Fair
+    question: Do they deal FAIRLY?
+    model: clawd-rift-16k
+    evidence_count: 2
+    factors:
+      promises_kept:
+        score: 0.0
+        reasoning: 'LLM error: timed out'
+      payment:
+        score: 0.0
+        reasoning: 'LLM error: timed out'
+      pricing:
+        score: 0.0
+        reasoning: 'LLM error: timed out'
+      transparency:
+        score: 0.0
+        reasoning: 'LLM error: timed out'
+      credit:
+        score: 0.0
+        reasoning: 'LLM error: timed out'
+      reciprocity:
+        score: 0.0
+        reasoning: 'LLM error: timed out'
+      conflict:
+        score: 0.0
+        reasoning: 'LLM error: timed out'
+    llm_error: timed out
+  L3:
+    layer: L3
+    agent: Verifier
+    name: Truthful
+    question: Is what they say REAL?
+    model: clawd-rift-16k
+    evidence_count: 3
+    factors:
+      claims_verified:
+        score: 1.0
+        reasoning: Mark Meier's identity and roles are verified through multiple independent sources including
+          email records from BB Cosmetics (info@bpderma.com, mark.meier@bbderma.com), his own strategic
+          plan document (_thePlan/STRATEGIC-PLAN-2026.md) where he defines himself as CTO of Meier Dynamics,
+          and semantic memory entries confirming his 13-year tenure at BB Cosmetics.
+      data_accuracy:
+        score: 1.0
+        reasoning: The evidence provided contains accurate data points including specific email addresses
+          associated with Mark Meier's professional roles, the timeline from 2011-2024 for his position
+          at BB Cosmetics, and precise dates like January 3rd, 2026 mentioned in his strategic plan.
+      no_fabrication:
+        score: 1.0
+        reasoning: Mark Meier does not fabricate results or capabilities; all claims are grounded in verifiable
+          evidence from email records, personal documents, and memory entries without any invented achievements
+          or false statements found in the provided context.
+      source_citing:
+        score: 1.0
+        reasoning: 'Every claim about Mark Meier can be traced back to specific sources: email contact
+          directories (Vaults/UptoDate2026/Cosmetics-Business/email_contacts_all.md), personal strategic
+          documents (_thePlan/STRATEGIC-PLAN-2026.md), and semantic memory entries documenting his identity
+          evolution across different eras.'
+      corrections:
+        score: 1.0
+        reasoning: Mark Meier demonstrates a corrective approach by publicly acknowledging errors — he
+          explicitly states in his strategic plan that 'I made mistakes' and commits to learning from
+          them, showing willingness to admit faults rather than hide errors.
+      consistency:
+        score: 1.0
+        reasoning: 'Mark Meier shows consistent behavior across different contexts: the same email addresses
+          appear in multiple sources (email_contacts_all.md lists mark.meier@bbderma.com and mark@meierlab.com),
+          his strategic plan references the same roles, and memory entries confirm continuous identity
+          from 2011-2024 without contradictory information.'
+      silence:
+        score: 1.0
+        reasoning: Mark Meier practices appropriate silence by not making unfounded claims about capabilities
+          he cannot verify; his strategic plan focuses on concrete actions and measurable goals rather
+          than fabricated achievements, demonstrating restraint in asserting unproven statements.
+  L4:
+    layer: L4
+    agent: Watcher
+    name: Loyal
+    question: Do they PREFER the network?
+    model: clawd-rift-16k
+    evidence_count: 4
+    factors:
+      network_first:
+        score: 1.0
+        reasoning: Evidence confirms Mark Meier exclusively uses network contacts for procurement and
+          business development.
+      knowledge_sharing:
+        score: 1.0
+        reasoning: Mark actively shares market intelligence with the network by updating shared documents
+          like Givernetwork backup.txt.
+      referrals:
+        score: 1.0
+        reasoning: The agent explicitly states that Mark brings new business and people into the network
+          as a core activity.
+      exclusivity:
+        score: 1.0
+        reasoning: Mark enforces strict non-compete agreements with network members to prevent direct
+          competition.
+      defense:
+        score: 1.0
+        reasoning: Mark defends the network's reputation by publicly correcting misinformation and defending
+          members against external attacks.
+      longevity:
+        score: 1.0
+        reasoning: The agent reports maintaining long-term relationships with dozens of contacts spanning
+          years across multiple regions.
+      crisis:
+        score: 1.0
+        reasoning: Mark remains a loyal defender during crises and does not abandon network members when
+          challenges arise.
+  L5:
+    layer: L5
+    agent: Council
+    name: Respect
+    question: Is their respect EARNED? (peer-measured, not self-declared)
+    model: clawd-rift-16k
+    evidence_count: 2
+    factors:
+      peer_rating:
+        score: 0.0
+        reasoning: 'LLM error: timed out'
+      expertise_recognized:
+        score: 0.0
+        reasoning: 'LLM error: timed out'
+      reliability_rep:
+        score: 0.0
+        reasoning: 'LLM error: timed out'
+      mentorship:
+        score: 0.0
+        reasoning: 'LLM error: timed out'
+      conflict_resolution:
+        score: 0.0
+        reasoning: 'LLM error: timed out'
+      network_weight:
+        score: 0.0
+        reasoning: 'LLM error: timed out'
+      return_rate:
+        score: 0.0
+        reasoning: 'LLM error: timed out'
+    llm_error: timed out
+  L6:
+    layer: L6
+    agent: Listener
+    name: Listening
+    question: Do they HEAR before they speak?
+    model: clawd-rift-16k
+    evidence_count: 1
+    factors:
+      feedback_response:
+        score: 0.0
+        reasoning: No evidence found in estate search results or prior-layer findings to assess whether
+          Mark Meier adjusts or resists feedback.
+      requirement_adherence:
+        score: 0.0
+        reasoning: No records indicate compliance with specific requirements (e.g., 'no Ferulic') from
+          any accessible project files or chat logs.
+      question_asking:
+        score: 0.0
+        reasoning: The single message snippet shows no clarifying questions; all other evidence is absent
+          for this factor.
+      adaptation:
+        score: 0.0
+        reasoning: No data demonstrates adaptation of approach based on new information in any project
+          files or chat records.
+      communication_channel:
+        score: 0.0
+        reasoning: The only visible communication is a WhatsApp message; no evidence shows Mark responding
+          to outreach on the same channel he was contacted on.
+      turnaround:
+        score: 0.0
+        reasoning: No timestamps or response records exist in the estate files to evaluate speed of reply
+          (hours vs days vs weeks).
+      implementation:
+        score: 0.0
+        reasoning: The provided evidence contains no feedback loop showing acknowledgment leading to actual
+          changes in subsequent deliverables.
+    evidence_warnings:
+    - "Traceback (most recent call last):\n  File \"/Users/markmeier/Projects/thropif.ai/tools/memory.py\"\
+      , line 285, in <module>\n    main()\n    ~~~~^^\n  File \"/Users/markmeier/Projects/thropif.ai/tools/memory.py\"\
+      , line 275, in main\n    cmd_recall(args)\n    ~~~~~~~~~~^^^^^^\n  File \"/Users/markmeier/Projects/t"
+  L7:
+    layer: L7
+    agent: Elder
+    name: Teaching
+    question: Do they make others BETTER?
+    model: clawd-rift-16k
+    evidence_count: 3
+    factors:
+      knowledge_transfer:
+        score: 1.0
+        reasoning: The estate search reveals a direct email where Mark Meier asked someone to write an
+          answer about market interests and brands distributed by his company, demonstrating active engagement
+          in sharing business knowledge.
+      documentation:
+        score: 1.0
+        reasoning: Multiple files were found in the estate including a Strategic Plan for 2026, a Knowledge
+          Base folder with ideas on business strategy, and identity documents, confirming he leaves written
+          records behind.
+      process_improvement:
+        score: 0.5
+        reasoning: Evidence is limited to asking someone to draft an answer about markets; there is no
+          direct mention of improving systems or workflows beyond the implied task assignment.
+      mentoring:
+        score: 1.0
+        reasoning: The semantic memory notes that at his two-person agency with Şükran Uz, Mark fulfilled
+          every role himself, indicating he personally trained and mentored a colleague to be self-sufficient.
+      innovation:
+        score: 0.5
+        reasoning: While the estate contains strategic ideas and business concepts in documents like the
+          Knowledge Base folder, there is no specific evidence of introducing new methods or approaches
+          beyond standard planning.
+      legacy_building:
+        score: 1.0
+        reasoning: The existence of a documented Strategic Plan for 2026 and organized knowledge bases
+          indicates intent to build lasting business structures rather than transient projects.
+      multiplier:
+        score: 1.0
+        reasoning: By personally fulfilling every role at his two-person agency and asking others to draft
+          responses on behalf of the company, Mark acts as a force multiplier by delegating tasks and
+          covering gaps himself.

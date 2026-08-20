@@ -5,6 +5,80 @@
 #
 # truth.rate = (L4.loyal evidence / L5.respect peer-measure) / L6.listening cost
 # gold seal (L7) = all 7 Teaching factors verified
+#
+# ── TIME (Z axis) ──────────────────────────────────────────────────────────
+# Every cell has a lifecycle. Time flows forward only. Nothing goes negative.
+#
+#   being ──→ existing ──→ verified ──→ stale ──→ Z
+#   (born)    (data in)    (human OK)   (decaying)  (archived)
+#
+# States:
+#   00i  = cell created, empty, question asked but not answered (score: 0)
+#   0.1  = being — first data entered, unreviewed (score: 0.01-0.19)
+#   0.2  = existing — data present, AI-scored (score: 0.20-0.59)
+#   0.6  = verified — peer or expert confirmed (score: 0.60-0.89)
+#   0.9  = re-verified — human gold-sealed (score: 0.90-1.00)
+#   Z    = archived — truth.rate decayed below threshold, moved to _archive/
+#
+# Decay rules:
+#   - Every cell has a `verified_at` timestamp
+#   - truth.rate decays 0.01/day if not re-verified (configurable per layer)
+#   - L1 (identity) decays SLOW (0.005/day — names don't change fast)
+#   - L4 (evidence) decays MEDIUM (0.01/day — data ages)
+#   - L6 (cost) decays FAST (0.02/day — prices change)
+#   - When truth.rate < 0.05 → cell state = stale
+#   - When truth.rate < 0.01 → cell moves to Z (_archive/)
+#   - Re-verification resets truth.rate to the verified score
+#   - Z is not death — archived cells can be recalled and re-scored
+#
+# Time tracking per cell:
+#   created_at:   when the cell was first filled
+#   updated_at:   last data change
+#   verified_at:  last human/expert verification
+#   verified_by:  who verified (person OOi ID)
+#   decay_rate:   per-day decay (default by layer)
+#   state:        00i | being | existing | verified | re-verified | stale | Z
+#
+# ── LIFECYCLE ──────────────────────────────────────────────────────────────
+#
+#   00i ─────→ being ─────→ existing ─────→ verified ─────→ re-verified
+#   (empty)    (RAG scan)   (7 agents)      (expert)        (founder)
+#     │           │             │               │                │
+#     │           │             │               │                │
+#     └───────────┴─────────────┴───────────────┴────────────────┘
+#                                    │
+#                              time passes
+#                              no re-verification
+#                                    │
+#                                    ▼
+#                                  stale ────→ Z (archive)
+#
+# The gradient: cyan (#5EE7FF) at 00i → gold (#C9A227) at re-verified
+# 512 steps between them. Time dims the color. Re-verification brightens it.
+
+# ── PER-LAYER DECAY RATES ─────────────────────────────────────────────────
+decay:
+  L1: 0.005    # identity changes slowly (name, role)
+  L2: 0.008    # fairness track record — moderate decay
+  L3: 0.010    # truthfulness — evidence ages at standard rate
+  L4: 0.010    # loyalty — network behavior measured over time
+  L5: 0.012    # respect — peer opinions shift
+  L6: 0.015    # listening — responsiveness is recent or stale
+  L7: 0.005    # teaching — legacy decays slowly (what you taught stays)
+
+# ── CELL SCHEMA ────────────────────────────────────────────────────────────
+# Every cell in every layer follows this structure:
+cell_schema:
+  score: 0.0           # 0.0 - 1.0 (the truth.rate of this cell)
+  state: "00i"         # 00i | being | existing | verified | re-verified | stale | Z
+  evidence: ""         # one-line evidence string
+  source: ""           # where the evidence came from (path or agent ID)
+  created_at: null     # ISO timestamp — when first data entered
+  updated_at: null     # ISO timestamp — last change
+  verified_at: null    # ISO timestamp — last human/expert verification
+  verified_by: null    # person OOi ID who verified (e.g. "person.mark-meier")
+  decay_rate: null     # override per-cell (null = use layer default)
+  history: []          # array of {score, source, timestamp} — the L0 trail
 
 L1.Giver:
   question: "What does this person GIVE to the network?"

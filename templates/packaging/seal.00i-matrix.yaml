@@ -1,0 +1,83 @@
+# 00i Seal/Shrink Band Matrix
+# OOi.Lens[Product.Physical.Part.Seal]
+# Tamper evidence. The customer knows nobody opened it before them.
+# Small part, big trust signal. Connected to: closure, bottle, filling line
+
+categories:
+  1.Type:         "Shrink band, tear strip, induction seal, vacuum button, breakable ring"
+  2.Material:     "PVC, PET, OPS shrink film — shrink ratio, clarity, printability"
+  3.Application:  "Steam tunnel, hot air, heat gun — speed, consistency, positioning"
+  4.Evidence:     "Visible proof of tampering — cannot be re-sealed after opening"
+  5.Print:        "Logo, 'sealed for safety', brand color, perforation line visibility"
+  6.Compliance:   "EU tamper-evidence requirements, pharma-grade if dermaceutical claims"
+  7.Cost:         "Per-unit cost, application cost, material + labor"
+
+L1.Giver:
+  factors:
+    type:          "Proves product is unopened — customer trust at point of purchase"
+    material:      "Shrinks cleanly — no wrinkles, no bubbles, no white marks"
+    application:   "Applied at production speed without slowing the filling line"
+    evidence:      "Clearly broken when opened — cannot be mistaken for sealed"
+    print:         "Branded seal reinforces authenticity — anti-counterfeit signal"
+    compliance:    "Meets tamper-evidence regulation for every target market"
+    cost:          "Adds minimal cost relative to trust value it provides"
+
+L2.Fair:
+  factors:
+    type:          "Type appropriate for product format (band for bottle, induction for jar)"
+    material:      "Material spec matches delivery — correct shrink ratio and gauge"
+    application:   "Application temperature validated — no product heat damage"
+    evidence:      "Perforation works every time — no stuck seals frustrating the customer"
+    print:         "Print matches approved artwork — position and color consistent"
+    compliance:    "Compliance checked for each market — not assumed from one"
+    cost:          "Cost transparent — material + application broken out"
+
+L3.Truthful:
+  factors:
+    type:          "Type documented in product specification"
+    material:      "Material certificate on file — polymer, gauge, shrink ratio"
+    application:   "Tunnel temperature and speed settings documented and validated"
+    evidence:      "Tamper-evidence test report — 10 units tested for break pattern"
+    print:         "Print proof approved and on file"
+    compliance:    "Per-market compliance check documented"
+    cost:          "Cost tracked per-unit including waste and rework"
+
+L4.Loyal:
+  factors:
+    type:          "Standardized seal type across product line where possible"
+    material:      "Network-approved seal material supplier"
+    application:   "Same application equipment across filling line"
+    evidence:      "Consistent tamper-evidence experience across all BP Derma SKUs"
+    print:         "Same print supplier as labels for color consistency"
+    compliance:    "Compliance template shared across network products"
+    cost:          "Volume pricing consolidated across SKU portfolio"
+
+L5.Respect:
+  factors:
+    type:          "Customer recognizes the seal as quality indicator"
+    material:      "Appearance is clean and professional on shelf"
+    application:   "Zero customer complaints about seal quality"
+    evidence:      "Pharmacist trusts the seal for product integrity"
+    print:         "Print quality matches the rest of the packaging"
+    compliance:    "Regulatory authority accepts without query"
+    cost:          "Cost-effective vs industry benchmark for this product category"
+
+L6.Listening:
+  factors:
+    type:          "Changed type when customer reports difficulty opening"
+    material:      "Upgraded when shrink quality degrades in new tunnel"
+    application:   "Adjusted when line speed changes affect seal quality"
+    evidence:      "Redesigned when counterfeit reports suggest current seal is copyable"
+    print:         "Updated when brand refresh changes visual identity"
+    compliance:    "Updated when tamper-evidence regulation changes"
+    cost:          "Re-sourced when material costs spike"
+
+L7.Teaching:
+  factors:
+    type:          "Seal type selection guide for different product formats"
+    material:      "Material-to-tunnel compatibility guide documented"
+    application:   "Application parameter guide for production operators"
+    evidence:      "Tamper-evidence testing protocol documented"
+    print:         "Seal print specification template for new products"
+    compliance:    "Per-market tamper-evidence requirements database"
+    cost:          "Cost-per-unit tracking template across SKU lifecycle"

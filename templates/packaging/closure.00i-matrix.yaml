@@ -1,0 +1,82 @@
+# 00i Closure Matrix (Cap, Pump, Dropper, Spray)
+# OOi.Lens[Product.Physical.Part.Closure]
+# Connected to: bottle (thread fit), formula (compatibility), supplier
+
+categories:
+  1.Type:         "Screw cap, flip-top, pump, dropper, spray, airless — function defines form"
+  2.Mechanism:    "Dose delivery, spring force, priming, lock, child-resistant if required"
+  3.Fit:          "Thread size (20/410, 24/410), seal (liner, gasket), torque spec"
+  4.Material:     "PP, PE, aluminum, glass dropper — compatible with formula"
+  5.Dosing:       "Per-pump volume (0.5ml, 1.0ml), drop size, spray pattern"
+  6.Cost:         "Unit cost, MOQ, tooling, multi-SKU standardization"
+  7.User_Feel:    "Click, resistance, one-hand operation, tactile feedback"
+
+L1.Giver:
+  factors:
+    type:          "Right delivery method for the formula (pump for serum, flip for cleanser)"
+    mechanism:     "Delivers correct dose every time — no flooding, no starvation"
+    fit:           "Seals perfectly — no leaking in shipping, no air ingress over shelf life"
+    material:      "No interaction with formula — no discoloration, no taste, no corrosion"
+    dosing:        "Consistent dose volume ±10% across actuations"
+    cost:          "Cost-effective for the product's price tier"
+    user_feel:     "Satisfying to use — premium feel matches product positioning"
+
+L2.Fair:
+  factors:
+    type:          "Type chosen for function, not to inflate perceived value"
+    mechanism:     "Mechanism reliably works for the entire product life (500+ actuations)"
+    fit:           "Thread spec matches bottle exactly — no cross-threading, no wobble"
+    material:      "Material matches spec sheet — no substitution without re-testing"
+    dosing:        "Labeled dose matches actual delivery (if '1 pump = ideal amount')"
+    cost:          "Pricing transparent — no surprise tooling or setup charges"
+    user_feel:     "Functions as described on packaging instructions"
+
+L3.Truthful:
+  factors:
+    type:          "Type documented in product spec — revision controlled"
+    mechanism:     "Mechanism test report: spring force, priming actuations, lock function"
+    fit:           "Torque test report: application and removal torque within spec"
+    material:      "Material certificate: polymer type, food-contact compliance"
+    dosing:        "Dose uniformity test: n=10 actuations measured at start, middle, end"
+    cost:          "Purchase order matches quoted specification exactly"
+    user_feel:     "Consumer panel evaluation scored and documented"
+
+L4.Loyal:
+  factors:
+    type:          "Standardizes closure type across similar SKUs (all serums = same pump)"
+    mechanism:     "Uses network-approved closure supplier for volume pricing"
+    fit:           "Uses standard thread sizes shared across portfolio"
+    material:      "Sources from network-approved material suppliers"
+    dosing:        "Standardizes dose volumes across similar product types"
+    cost:          "Consolidates closure orders across SKUs for volume discount"
+    user_feel:     "Consistent feel across brand — customer recognizes by touch"
+
+L5.Respect:
+  factors:
+    type:          "Closure type accepted by target retail channels"
+    mechanism:     "Zero in-market returns due to closure failure"
+    fit:           "Leak-free shipping record (transport vibration test passed)"
+    material:      "Supplier quality rating — defect rate, on-time delivery"
+    dosing:        "Pharmacist/dermatologist considers dose delivery appropriate"
+    cost:          "Cost competitive with comparable market products"
+    user_feel:     "User reviews mention positive packaging experience"
+
+L6.Listening:
+  factors:
+    type:          "Switched type when user feedback says 'hard to dispense'"
+    mechanism:     "Redesigned when field complaints show mechanism failure"
+    fit:           "Retooled when bottle supplier changes thread specification"
+    material:      "Changed material when compatibility test shows interaction"
+    dosing:        "Adjusted dose when clinical feedback says 'too much/too little'"
+    cost:          "Re-sourced when price increase exceeds acceptable margin impact"
+    user_feel:     "Modified based on accessibility feedback (arthritic hands, wet hands)"
+
+L7.Teaching:
+  factors:
+    type:          "Closure selection guide: which type for which formula viscosity"
+    mechanism:     "Mechanism comparison database: pump vs dropper vs spray performance"
+    fit:           "Thread compatibility matrix: which closures fit which bottles"
+    material:      "Material-formula compatibility reference for future products"
+    dosing:        "Dose-to-efficacy guide: optimal dose per product category"
+    cost:          "Cost benchmarking: closure cost as % of total packaging cost"
+    user_feel:     "User experience testing methodology documented"

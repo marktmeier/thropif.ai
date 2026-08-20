@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thropif.ai — OOi Engine</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#060a14;--panel:#0c1222;--node:#101828;--line:#1a2540;--border:#263354;
+  --ink:#e2e8f0;--dim:#64748b;--muted:#94a3b8;--cyan:#5EE7FF;--gold:#C9A227;--accent:#22c55e}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font:12px/1.5 'JetBrains Mono',monospace;height:100vh;display:flex;flex-direction:column}
+
+/* Nav */
+nav{height:48px;background:linear-gradient(180deg,#0f172a,#080d1a);border-bottom:1px solid var(--line);
+  display:flex;align-items:center;padding:0 16px;gap:6px;flex-shrink:0;z-index:20}
+nav .logo{font-size:15px;font-weight:700;margin-right:12px}
+nav .logo span{color:var(--gold)}
+nav a{color:var(--dim);text-decoration:none;padding:6px 10px;border-radius:6px;font-size:11px;transition:.15s;white-space:nowrap}
+nav a:hover,nav a.on{color:#fff;background:rgba(255,255,255,.06)}
+nav a.on{border-bottom:2px solid var(--gold)}
+nav .sp{flex:1}
+nav .stat{font-size:10px;color:var(--dim);background:var(--node);padding:3px 8px;border-radius:4px;border:1px solid var(--line)}
+
+/* Main */
+main{flex:1;overflow:hidden;display:flex}
+
+/* Sidebar */
+.side{width:56px;background:var(--panel);border-right:1px solid var(--line);display:flex;flex-direction:column;
+  align-items:center;padding:8px 0;gap:4px;flex-shrink:0}
+.side a{width:40px;height:36px;display:flex;align-items:center;justify-content:center;font-size:16px;
+  border-radius:7px;text-decoration:none;border:1px solid transparent;transition:.15s;position:relative}
+.side a:hover{background:rgba(255,255,255,.04);border-color:var(--line)}
+.side a.on{background:rgba(201,162,39,.08);border-color:var(--gold)}
+.side a[title]:hover::after{content:attr(title);position:absolute;left:50px;background:#020617;color:#e2e8f0;
+  border:1px solid var(--line);border-radius:5px;padding:3px 8px;white-space:nowrap;font-size:10px;z-index:99;
+  font-family:'JetBrains Mono',monospace}
+.side .sep{width:30px;height:1px;background:var(--line);margin:4px 0}
+
+/* Content */
+.content{flex:1;overflow:auto;position:relative}
+.page{display:none;height:100%;width:100%}
+.page.on{display:flex;flex-direction:column}
+
+/* Dashboard grid */
+.dash{padding:24px;overflow-y:auto}
+.dash h2{font-size:16px;margin-bottom:16px;color:var(--gold)}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));margin-bottom:24px}
+.card{background:var(--node);border:1px solid var(--line);border-radius:10px;padding:16px;transition:.15s}
+.card:hover{border-color:var(--border)}
+.card h3{font-size:13px;margin-bottom:4px}
+.card .sub{font-size:10px;color:var(--dim)}
+.card .num{font-size:28px;font-weight:700;color:var(--gold);margin:8px 0}
+
+/* iframes for views */
+.view-frame{flex:1;border:none;width:100%;height:100%}
+
+/* Command bar */
+.cmd-bar{height:40px;background:var(--panel);border-top:1px solid var(--line);display:flex;align-items:center;padding:0 16px;gap:8px;flex-shrink:0}
+.cmd-bar input{flex:1;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:6px;
+  padding:6px 12px;font:inherit;font-size:12px}
+.cmd-bar input:focus{outline:none;border-color:var(--gold)}
+.cmd-bar .hint{font-size:9px;color:#334155}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">thropif<span>.ai</span></div>
+  <a href="#" class="nav on" data-page="dashboard">Dashboard</a>
+  <a href="#" class="nav" data-page="wheel">Wheel (L0)</a>
+  <a href="#" class="nav" data-page="depth">Depth (Side)</a>
+  <a href="#" class="nav" data-page="templates">Templates</a>
+  <div class="sp"></div>
+  <div class="stat" id="stat-tpl">0 templates</div>
+  <div class="stat" id="stat-cells">0 cells</div>
+</nav>
+
+<main>
+  <div class="side">
+    <a href="#" title="Dashboard" class="side-nav on" data-page="dashboard">📊</a>
+    <a href="#" title="Wheel (L0 View)" class="side-nav" data-page="wheel">🎯</a>
+    <a href="#" title="Depth (Side View)" class="side-nav" data-page="depth">⏳</a>
+    <div class="sep"></div>
+    <a href="#" title="Pipeline" class="side-nav" data-page="pipeline">🔀</a>
+    <a href="#" title="Evaluate" class="side-nav" data-page="evaluate">🧠</a>
+    <a href="#" title="Search" class="side-nav" data-page="search">🔍</a>
+    <a href="#" title="Objects" class="side-nav" data-page="objects">🗄</a>
+    <a href="#" title="Memory" class="side-nav" data-page="memory">💾</a>
+    <a href="#" title="Benchmark" class="side-nav" data-page="benchmark">📈</a>
+    <a href="#" title="OCR" class="side-nav" data-page="ocr">👁</a>
+    <div class="sep"></div>
+    <a href="#" title="Settings" class="side-nav" data-page="settings">⚙️</a>
+  </div>
+
+  <div class="content">
+    <!-- DASHBOARD -->
+    <div class="page on" id="p-dashboard">
+      <div class="dash">
+        <h2>OOi Engine</h2>
+        <div class="grid" id="stats-grid"></div>
+        <h2>Templates</h2>
+        <div class="grid" id="tpl-grid"></div>
+      </div>
+    </div>
+
+    <!-- WHEEL -->
+    <div class="page" id="p-wheel">
+      <iframe class="view-frame" src="/wheel"></iframe>
+    </div>
+
+    <!-- DEPTH -->
+    <div class="page" id="p-depth">
+      <iframe class="view-frame" src="/depth"></iframe>
+    </div>
+
+    <!-- TEMPLATES -->
+    <div class="page" id="p-templates">
+      <div class="dash" id="tpl-detail"></div>
+    </div>
+
+    <!-- PLACEHOLDER PAGES -->
+    <div class="page" id="p-pipeline"><div class="dash"><h2>🔀 Pipeline</h2><div class="sub">Node editor — coming in Phase 6</div></div></div>
+    <div class="page" id="p-evaluate"><div class="dash"><h2>🧠 Evaluate</h2><div class="sub">7-agent evaluator — run from CLI: python3 evaluator/evaluate.py "Name"</div></div></div>
+    <div class="page" id="p-search"><div class="dash"><h2>🔍 Search</h2><div class="sub">Unified search — run from CLI: python3 tools/search.py "query"</div></div></div>
+    <div class="page" id="p-objects"><div class="dash"><h2>🗄 Objects</h2><div class="sub">OOi object browser — coming in Phase 2</div></div></div>
+    <div class="page" id="p-memory"><div class="dash"><h2>💾 Memory</h2><div class="sub">RAG store — python3 tools/memory.py stats</div></div></div>
+    <div class="page" id="p-benchmark"><div class="dash"><h2>📈 Benchmark</h2><div class="sub">Model comparison — python3 evaluator/evaluate.py "Name" --benchmark</div></div></div>
+    <div class="page" id="p-ocr"><div class="dash"><h2>👁 OCR</h2><div class="sub">Document vision — python3 tools/ocr.py file.pdf</div></div></div>
+    <div class="page" id="p-settings"><div class="dash"><h2>⚙️ Settings</h2><div class="sub">Bots, API, Models, Router — coming in Phase 4</div></div></div>
+  </div>
+</main>
+
+<div class="cmd-bar">
+  <span style="color:var(--gold);font-size:13px">▸</span>
+  <input id="cmd" placeholder="evaluate Mark Meier · search ingredient · scaffold product.1032 · status" autocomplete="off">
+  <div class="hint">commands hit Python directly — no LLM overhead</div>
+</div>
+
+<script>
+// Navigation
+function showPage(page){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('on'));
+  document.querySelectorAll('.nav,.side-nav').forEach(a=>a.classList.remove('on'));
+  const el=document.getElementById('p-'+page);
+  if(el) el.classList.add('on');
+  document.querySelectorAll(`[data-page="${page}"]`).forEach(a=>a.classList.add('on'));
+}
+
+document.querySelectorAll('.nav,.side-nav').forEach(a=>{
+  a.onclick=e=>{e.preventDefault();showPage(a.dataset.page)};
+});
+
+// Load stats
+fetch('/api/stats').then(r=>r.json()).then(d=>{
+  document.getElementById('stat-tpl').textContent=d.templates+' templates';
+  document.getElementById('stat-cells').textContent=d.factors+' factors';
+  
+  const sg=document.getElementById('stats-grid');
+  sg.innerHTML=`
+    <div class="card"><h3>Templates</h3><div class="num">${d.templates}</div><div class="sub">00i matrices defined</div></div>
+    <div class="card"><h3>Factors</h3><div class="num">${d.factors}</div><div class="sub">scoreable cells defined</div></div>
+    <div class="card"><h3>Per Object</h3><div class="num">3,199</div><div class="sub">addressable cells (L1-L7)</div></div>
+    <div class="card"><h3>Tools</h3><div class="num">${d.tools.length}</div><div class="sub">${d.tools.join(' · ')}</div></div>
+  `;
+});
+
+// Load templates
+fetch('/api/templates').then(r=>r.json()).then(data=>{
+  const tg=document.getElementById('tpl-grid');
+  const colors={person:'#22c55e',chemist:'#38bdf8',packaging:'#ec4899'};
+  Object.entries(data).forEach(([k,t])=>{
+    const group=k.split('.')[0];
+    const c=colors[group]||'#64748b';
+    const n=Object.values(t.layers).reduce((s,l)=>s+Object.keys(l.factors).length,0);
+    tg.innerHTML+=`<div class="card" style="border-left:3px solid ${c};cursor:pointer" onclick="showTemplate('${k}')">
+      <h3 style="color:${c}">${t.name}</h3>
+      <div class="sub">${n} factors · ${Object.keys(t.layers).length} layers</div>
+    </div>`;
+  });
+});
+
+function showTemplate(key){
+  showPage('templates');
+  fetch('/api/templates/'+key).then(r=>r.json()).then(t=>{
+    const det=document.getElementById('tpl-detail');
+    let html=`<h2>${t.name}</h2>`;
+    if(t.categories && Object.keys(t.categories).length){
+      html+=`<div style="margin-bottom:16px">`;
+      Object.entries(t.categories).forEach(([k,v])=>{
+        html+=`<span style="display:inline-block;padding:3px 10px;margin:3px;border-radius:5px;font-size:10px;
+          border:1px solid var(--line);color:var(--dim)" title="${v}">${k}</span>`;
+      });
+      html+=`</div>`;
+    }
+    const COLORS=['#22c55e','#84cc16','#eab308','#f59e0b','#f97316','#ec4899','#ef4444'];
+    Object.entries(t.layers).forEach(([lk,ld],i)=>{
+      const c=COLORS[i]||'#64748b';
+      html+=`<div style="margin-bottom:16px;border-left:3px solid ${c};padding-left:12px">
+        <h3 style="color:${c}">${lk}</h3>
+        <div style="font-size:10px;color:var(--dim);margin-bottom:8px">${ld.question}</div>`;
+      Object.entries(ld.factors).forEach(([fk,fd])=>{
+        html+=`<div style="padding:4px 0;font-size:11px"><strong style="color:${c}">${fk}</strong> — ${fd}</div>`;
+      });
+      html+=`</div>`;
+    });
+    det.innerHTML=html;
+  });
+}
+
+// Command bar
+document.getElementById('cmd').addEventListener('keydown',e=>{
+  if(e.key!=='Enter')return;
+  const val=e.target.value.trim();
+  if(!val)return;
+  e.target.value='';
+  // TODO: wire to backend
+  console.log('CMD:',val);
+});
+</script>
+</body>
+</html>

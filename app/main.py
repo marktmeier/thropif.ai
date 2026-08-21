@@ -90,6 +90,177 @@ async def api_stats():
     }
 
 
+# ── Settings ──
+
+SETTINGS_FILE = ROOT / "settings.yaml"
+
+def load_settings() -> dict:
+    defaults = {
+        "llm": {
+            "provider": "bitrouter",
+            "url": "http://127.0.0.1:4356/v1",
+            "model": "clawd-rift-16k",
+            "key": "local",
+            "fallback_url": "http://127.0.0.1:1234/v1",
+            "fallback_model": "google/gemma-4-12b-qat",
+        },
+        "bots": {
+            "jdax": {"name": "jDax", "platform": "telegram", "handle": "@Jdaxx_bot", "status": "active"},
+            "edax": {"name": "eDax", "platform": "telegram", "handle": "@Edaxv01_bot", "status": "active"},
+            "cdax": {"name": "cDax", "platform": "internal", "handle": "container", "status": "planned"},
+        },
+        "sources": {
+            "email_db": str(Path.home() / "Projects/08-mail-channels/data/mailfind.db"),
+            "whatsapp": [
+                str(Path.home() / "Downloads/WhatsApp Chat - Wessam Hayba Nin Arkadasi/_chat.txt"),
+                str(Path.home() / "Downloads/New Folder With Items/WhatsApp Chat - Anais Bezacier/_chat.txt"),
+            ],
+            "vault": str(Path.home() / "Vaults"),
+            "registry": str(Path.home() / "Projects/00x/projects.yaml"),
+            "ooi_db": str(Path.home() / "Projects/00x/00i/00i.db"),
+        },
+        "pipeline": {
+            "stages": ["_st1.RAG", "_st2.JSON", "/OOi"],
+            "auto_run": False,
+            "schedule": "02:00",
+        },
+        "perspectives": ["government", "scientist", "commercial", "internal"],
+        "values": {
+            "L1": "SAFETY — first give no harm",
+            "L2": "PURITY — what's inside is fair to the body",
+            "L3": "TRUTH — prove every claim",
+            "L4": "TRACEABILITY — the chain holds",
+            "L5": "CONSISTENCY — respect is re-earned every batch",
+            "L6": "TRANSPARENCY — let them see, hear, verify",
+            "L7": "RESPONSIBILITY — your name on it, forever",
+        },
+    }
+    if SETTINGS_FILE.exists():
+        try:
+            saved = yaml.safe_load(SETTINGS_FILE.read_text())
+            if saved:
+                for k, v in saved.items():
+                    if isinstance(v, dict) and isinstance(defaults.get(k), dict):
+                        defaults[k].update(v)
+                    else:
+                        defaults[k] = v
+        except: pass
+    return defaults
+
+
+def save_settings(settings: dict):
+    SETTINGS_FILE.write_text(yaml.dump(settings, default_flow_style=False, allow_unicode=True))
+
+
+@app.get("/api/settings")
+async def api_settings():
+    return load_settings()
+
+
+@app.post("/api/settings")
+async def api_save_settings(request: Request):
+    data = await request.json()
+    settings = load_settings()
+    settings.update(data)
+    save_settings(settings)
+    return {"ok": True}
+
+
+@app.get("/api/settings/test-llm")
+async def test_llm():
+    """Test the LLM connection."""
+    import httpx
+    settings = load_settings()
+    url = settings["llm"]["url"]
+    try:
+        async with httpx.AsyncClient(timeout=10) as client:
+            r = await client.get(f"{url}/models")
+            models = r.json().get("data", [])
+            return {"ok": True, "models": len(models), "url": url,
+                    "names": [m["id"] for m in models[:10]]}
+    except Exception as e:
+        return {"ok": False, "error": str(e), "url": url}
+
+
+# ── OOi Archive API ──
+
+OOI_DB = Path.home() / "Projects" / "00x" / "00i" / "00i.db"
+
+@app.get("/api/ooi/objects")
+async def ooi_objects():
+    """List all OOi objects with truth rates."""
+    import sqlite3
+    if not OOI_DB.exists():
+        return {"objects": [], "count": 0}
+    conn = sqlite3.connect(str(OOI_DB))
+    conn.row_factory = sqlite3.Row
+    objects = []
+    for r in conn.execute("SELECT id, type, name, created, updated FROM objects ORDER BY updated DESC").fetchall():
+        truth = conn.execute("SELECT COALESCE(SUM(score),0)/49.0 FROM cells WHERE object_id=?", (r["id"],)).fetchone()[0]
+        objects.append({"id": r["id"], "type": r["type"], "name": r["name"], "truth": round(truth, 4)})
+    conn.close()
+    return {"objects": objects, "count": len(objects)}
+
+
+@app.get("/api/ooi/objects/{obj_id}")
+async def ooi_object(obj_id: str):
+    """Get one OOi object with all cells."""
+    import sqlite3
+    conn = sqlite3.connect(str(OOI_DB))
+    conn.row_factory = sqlite3.Row
+    obj = conn.execute("SELECT * FROM objects WHERE id=?", (obj_id,)).fetchone()
+    if not obj:
+        conn.close()
+        return {"error": "not found"}
+    cells = {}
+    for r in conn.execute("SELECT outside_i, inside_i, data, score, who, updated FROM cells WHERE object_id=?", (obj_id,)).fetchall():
+        cells[f"{r['outside_i']}.{r['inside_i']}"] = {"data": r["data"], "score": r["score"], "who": r["who"]}
+    truth = conn.execute("SELECT COALESCE(SUM(score),0)/49.0 FROM cells WHERE object_id=?", (obj_id,)).fetchone()[0]
+    connections = conn.execute(
+        "SELECT object_a, object_b, strength FROM connections WHERE object_a=? OR object_b=? ORDER BY strength DESC LIMIT 20",
+        (obj_id, obj_id)
+    ).fetchall()
+    conn.close()
+    return {
+        "id": obj["id"], "type": obj["type"], "name": obj["name"],
+        "truth": round(truth, 4), "cells": cells, "cell_count": len(cells),
+        "connections": [{"a": c["object_a"], "b": c["object_b"], "s": c["strength"]} for c in connections],
+    }
+
+
+@app.get("/api/ooi/network")
+async def ooi_network():
+    """Get the full network for visualization."""
+    import sqlite3
+    conn = sqlite3.connect(str(OOI_DB))
+    conn.row_factory = sqlite3.Row
+    nodes = []
+    for r in conn.execute("SELECT id, type, name FROM objects").fetchall():
+        t = conn.execute("SELECT COALESCE(SUM(score),0)/49.0 FROM cells WHERE object_id=?", (r["id"],)).fetchone()[0]
+        if t > 0.005:
+            nodes.append({"id": r["id"], "type": r["type"], "name": r["name"][:25], "truth": round(t, 3)})
+    edges = []
+    for r in conn.execute("SELECT object_a, object_b, strength FROM connections WHERE strength > 0.15 ORDER BY strength DESC LIMIT 300").fetchall():
+        edges.append({"source": r["object_a"], "target": r["object_b"], "strength": r["strength"]})
+    conn.close()
+    return {"nodes": nodes, "edges": edges}
+
+
+@app.get("/api/ooi/ledger")
+async def ooi_ledger(limit: int = 50):
+    """L0 ledger — last N writes."""
+    import sqlite3
+    conn = sqlite3.connect(str(OOI_DB))
+    conn.row_factory = sqlite3.Row
+    rows = conn.execute("SELECT * FROM ledger ORDER BY at DESC LIMIT ?", (limit,)).fetchall()
+    conn.close()
+    return {"entries": [dict(r) for r in rows], "count": len(rows)}
+
+
+@app.get("/pipeline")
+async def pipeline_page():
+    return FileResponse(STATIC / "pipeline.html")
+
 # ── Pipeline execution engine ──
 
 clients: list[WebSocket] = []
